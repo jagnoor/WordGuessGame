@@ -1,4 +1,23 @@
 # WordGuessGame
+
+## Pseudo code  
+
+
+pick a randon work from the array
+loop
+  get player guess a letter
+  display current progress
+  if player guess is not valid
+    tell player to pick a valid letter of the alphabet
+  else if you want to quit the Game
+    quit Game
+  else
+    if player guess belong to the random wordlist
+      update player progress
+
+      
+
+
 Before You Begin
 
 
