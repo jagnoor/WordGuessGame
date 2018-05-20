@@ -11,53 +11,60 @@
     <!-- Bootstrap core CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="02-css-bootstrap  /Bootstrap-Portfolio/cover/cover.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-  </head>
 
+  </head>
   <body>
+
     <h1> THE HANGMAN GAME </h1>
     <h2> Flinstone Characters </h2>
     <script type="text/javascript">
 
-    <!-- This is my word list. to be moved to a seperate file later -->
+    //  This is my word list. to be moved to a seperate file later -->
+
     var words=["Fred" , "Wilma" , "Pebbles" , "Dino" ,
                 "Barney" , "Betty" , "Bamm-Bamm" ,
                 "Mr Slate"]
 
-    <!-- var word basically generates
-    a randon number and a word from the array  -->
+    // var word basically generates  -->
+    // <!-- a random number and a corrosponding word from the array  -->
+    // <!--and saves that word in the var word  -->
 
-    var words=words[Math.floor(Math.randon()*words.lenght)];
+    var word=words[Math.floor(Math.random()*words.lenght)];
+
+    // <!-- now i need to display the number of blank spaces needed for the word selected randonly from thew array  -->
+    // <!-- this will display the number of _ for length of the word -->
+
+    var answer=[];
+    for (var i=0; i <word.length;i++)
+    {
+      answer[i]="_";
+    }
+    var remainingGuess=word.length;
+      while(remainingGuess>0){
+        alert(answer.join(" - "));
+        var guess=prompt("Guess a letter or cancel to quit game ");
+        if (guess==null)
+        {
+          break;
+        }
+      else if (guess.lenght!=1) {
+        alert("please enter a single letter of the alphabet");
+      }
+      else {
+            for (var j=0; j <word.lenght;j++){
+              if (word[j]==guess){
+                answer[j]=guess;
+                remainingGuess--;
+              }
+            }
+        }
+    }
+
+    alert(answer.join(" "));
+    alert("You won - The answer is "+ word);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</body>
-
-
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </script>
+  </body>
 
 </html>
