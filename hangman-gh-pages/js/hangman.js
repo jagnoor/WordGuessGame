@@ -11,7 +11,7 @@ function setImage(number) {
 function loadWordlist() {
   var word = '';
   $.ajax({
-    url: 'assets/wordlist.json',
+    url: 'assets/wordlist.json' ,
     async: false
   }).done(function(data) {
     for (word in data) {

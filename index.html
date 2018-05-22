@@ -2,69 +2,65 @@
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Jagnoor Singh's Portfolio</title>
-    <!-- Bootstrap core CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
 
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Jagnoor Singh's Portfolio</title>
+  <!-- Bootstrap core CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
 
-    <h1> THE HANGMAN GAME </h1>
-    <h2> Flinstone Characters </h2>
-    <script type="text/javascript">
+</head>
 
+<body>
+
+  <h1> THE HANGMAN GAME </h1>
+  <h2> Flinstone Characters </h2>
+
+  <script type="text/javascript">
     //  This is my word list. to be moved to a seperate file later -->
 
-    var words=["Fred" , "Wilma" , "Pebbles" , "Dino" ,
-                "Barney" , "Betty" , "Bamm-Bamm" ,
-                "Mr Slate"]
+    var words = ["Fred", "Wilma", "Pebbles", "Dino",
+      "Barney", "Betty", "Bamm-Bamm",
+      "Mr Slate"
+    ]
 
-    // var word basically generates  -->
-    // <!-- a random number and a corrosponding word from the array  -->
-    // <!--and saves that word in the var word  -->
-
-    var word=words[Math.floor(Math.random()*words.length)];
-
+    // var word basically generates a random number and a corrosponding word from the array  -->
     // <!-- now i need to display the number of blank spaces needed for the word selected randonly from thew array  -->
     // <!-- this will display the number of _ for length of the word -->
 
-    var answer=[];
-    for (var i=0; i <word.length;i++)
-    {
-      answer[i]="_";
+    var word = words[Math.floor(Math.random() * words.length)];
+    var answer = [];
+    for (var i = 0; i < word.length; i++) {
+      answer[i] = "_";
     }
-    var remainingGuess=word.length;
-      while(remainingGuess>0){
-        alert(answer.join(" - "));
-        var guess=prompt("Guess a letter or cancel to quit game ");
-        if (guess==null)
-        {
-          break;
-        }
-      else if (guess.lenght!=1) {
+
+    var remainingGuess = word.length;
+    while (remainingGuess > 0) {
+      alert("The word you need to guess is - " + "  " + answer.join("  "));
+      var guess = prompt("Guess a letter or cancel to quit game ");
+      if (guess == null) {
+        break;
+      }
+      else if (guess.length > 1) {
         alert("please enter a single letter of the alphabet");
       }
       else {
-            for (var j=0; j <word.lenght;j++){
-              if (word[j]==guess){
-                answer[j]=guess;
-                remainingGuess--;
-              }
-            }
+        for (var j = 0; j < word.length; j++) {
+          if (word[j] == guess) {
+            answer[j] = guess;
+            remainingGuess--;
+          }
         }
+      }
     }
 
-    alert(answer.join(" "));
-    alert("You won - The answer is "+ word);
-
-
+    alert(answer.join("  "));
+    alert("You won - The answer is " + word);
   </script>
-  </body>
+</body>
 
 </html>
