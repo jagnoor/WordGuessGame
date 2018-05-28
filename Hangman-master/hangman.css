@@ -1,9 +1,18 @@
 /* =========== Inherited Styles =========== */
 
 html,body{
-  color: azure;
+  color: red;
+  background:black;
+  font-family: 'Indie Flower', cursive;
+  
 }
 
+/* =========== Messing with the jumbotron =========== */
+
+.jumbotron {
+
+  background-color: white;
+}
 
 /* =========== Instructional Text =========== */
 
@@ -14,14 +23,10 @@ html,body{
 }
 
 .description{
-  color: aqua;
-  text-align: center;
+  color: firebrick;
+  text-align: left;
 }
 
-.description span{
-  color: firebrick;
-  text-align: center;
-}
 
 .gameLetters span{
   font-size: 1.5rem;
@@ -34,9 +39,9 @@ html,body{
 
 
 .gameLetters h3{
-  border: 1.5px dotted yellow;
+  border: 1.5px dotted greenyellow;
   color: transparent;
-  padding: 4px 4px;
+  padding: 6px 6px;
   display: inline-block;
 }
 

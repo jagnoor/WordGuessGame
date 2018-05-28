@@ -1,66 +1,123 @@
-<!-- Hangman Game -->
+    <!-- WordGuess Game -->
 
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Hang Man Game </title>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <title>Jagnoor Singh's Portfolio</title>
-  <!-- Bootstrap core CSS -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom styles for this template -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Custom -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <!-- Font Awesome Fonts -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 
-</head>
+  </head>
+  <body>
 
-<body>
+    <div class="jumbotron">
+    <h1 class='text-center'>Hanging Man Game </h1>
+    <blockquote>
+      <p class="text-center slogan"> <strong> BE A HERO - SAVE A LIFE FROM THE HANGMAN  </strong></p>
+    </blockquote>
+  </div>
 
-  <h1> THE HANGMAN GAME </h1>
-  <h2> Flinstone Characters </h2>
+  <!-- Header done-->
+  <!-- TO DO Change fonts to google fonts -->
 
-  <script type="text/javascript">
-    //  This is my word list. to be moved to a seperate file later -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-8">
+          <div class='hangContain'>
+        <div class='postUp vanish'></div>
+        <div class='postRight vanish'></div>
+        <div class='rope vanish'></div>
+        <div class='head vanish'></div>
+        <div class='body vanish'></div>
+        <div class='leftArm vanish'></div>
+        <div class='rightArm vanish'></div>
+        <div class='leftLeg vanish'></div>
+        <div class='rightLeg vanish'></div>
+        <div class='floor vanish'></div>
+          </div>
+      </div>
+    
+      <div class="col-sm-4">
+        <h2 class="text-center"><i><u>Instructions:</u></i></h2>
+        <div class="description">
+          <ul class="list-group">               
+              <li class="list-group-item list-group-item-info">Your objective is to free the hanging man! You have 10 guesses..</li>
+              <li class="list-group-item list-group-item-info">Guess each letter of the "GUESS THIS WORD" before running out of chances.</li>
+              <li class="list-group-item list-group-item-info">If you cannot GUESS the word, the man will HANG.</li>
+              <li class="list-group-item list-group-item-info">There are 100 different possible random words in this game</li>
+              <li class="list-group-item list-group-item-info">The words do not contain numbers, special characters, or symbols</li>
+              <li class="list-group-item list-group-item-light">Please make sure caps lock is off.</li>
+              <li class="list-group-item list-group-item-light">All words are in lowercase without spaces.</li>
+              <li class="list-group-item list-group-item-light">You cannot click with your mouse, you must type the letters.</li>
+            </ul>
+        </div>
 
-    var words = ["Fred", "Wilma", "Pebbles", "Dino",
-      "Barney", "Betty", "Bamm-Bamm",
-      "Mr Slate"
-    ]
+        <div class="gameLetters">
+          <span>"GUESS THIS WORD"  </span>
 
-    // var word basically generates a random number and a corrosponding word from the array  -->
-    // <!-- now i need to display the number of blank spaces needed for the word selected randonly from thew array  -->
-    // <!-- this will display the number of _ for length of the word -->
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-2">
+          <div class="counter">
+            <p id='chances'>Chances Remaining: 10</p>
+            <p id='correct'>Correct: 0</p>
+            <p id='incorrect'>Incorrect: 0 </p>
+          </div>
+        </div>
 
-    var word = words[Math.floor(Math.random() * words.length)];
-    var answer = [];
-    for (var i = 0; i < word.length; i++) {
-      answer[i] = "_";
-    }
+        
+        <div class="col-sm-10 text-center">
+          <h2 class='letters'>A</h2>
+          <h2 class='letters'>B</h2>
+          <h2 class='letters'>C</h2>
+          <h2 class='letters'>D</h2>
+          <h2 class='letters'>E</h2>
+          <h2 class='letters'>F</h2>
+          <h2 class='letters'>G</h2>
+          <h2 class='letters'>H</h2>
+          <h2 class='letters'>I</h2>
+          <h2 class='letters'>J</h2>
+          <h2 class='letters'>K</h2>
+          <h2 class='letters'>L</h2>
+          <h2 class='letters'>M</h2>
+              
+          <div class="col-sm-12 text-center">
+            <h3 class='letters'>N</h3>
+            <h3 class='letters'>O</h3>
+            <h3 class='letters'>P</h3>
+            <h3 class='letters'>Q</h3>
+            <h3 class='letters'>R</h3>
+            <h3 class='letters'>S</h3>
+            <h3 class='letters'>T</h3>
+            <h3 class='letters'>U</h3>
+            <h3 class='letters'>V</h3>
+            <h3 class='letters'>W</h3>
+            <h3 class='letters'>X</h3>
+            <h3 class='letters'>Y</h3>
+            <h3 class='letters'>Z</h3>
+          </div>
+        </div>     
+      </div>
+    </div>
 
-    var remainingGuess = word.length;
-    while (remainingGuess > 0) {
-      alert("The word you need to guess is - " + "  " + answer.join("  "));
-      var guess = prompt("Guess a letter or cancel to quit game ");
-      if (guess == null) {
-        break;
-      }
-      else if (guess.length > 1) {
-        alert("please enter a single letter of the alphabet");
-      }
-      else {
-        for (var j = 0; j < word.length; j++) {
-          if (word[j] == guess) {
-            answer[j] = guess;
-            remainingGuess--;
-          }
-        }
-      }
-    }
-
-    alert(answer.join("  "));
-    alert("You won - The answer is " + word);
-  </script>
-</body>
-
+    <script src='https://code.jquery.com/jquery-2.2.1.min.js'></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src='assets/javascript/game.js'></script>
+  </body>
 </html>
