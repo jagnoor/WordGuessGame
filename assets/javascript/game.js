@@ -47,7 +47,7 @@ function reloadEvent(){
   });
 }
 
-//Window kepress event
+//Window keyßpress event
 if (!gameHasEnded) {
 $(window).keypress(function(e) {
   var key = String.fromCharCode(e.which);
