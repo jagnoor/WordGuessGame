@@ -4,14 +4,14 @@
 
 html,body{
     color: tomato;
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Merriweather', serif;
     
   }
   
   /* =========== Messing with the jumbotron =========== */
   
   .jumbotron {
-    background-color: palegoldenrod; 
+    background-color: yellow; 
   }
   
   /* =========== Instructional Text =========== */
@@ -31,7 +31,7 @@ html,body{
   .gameLetters span{
     font-size: 1.5rem;
     font-weight: bold;
-    padding: 6px 6px;
+    padding: 3px 3px;
   }
   
   
@@ -40,15 +40,15 @@ html,body{
   
   
   .gameLetters h3{
-    border: 1px dotted rgb(7, 12, 1);
+    border: 2px dotted tomato;
     color: transparent;
-    padding: 6px 6px;
+    padding: 10px 10px;
     display: inline-block;
   }
   
   .hangContain{
     border: 5px dashed tomato;
-    width: 65%;
+    width: 100%;
     height: 375px;
   }
   
